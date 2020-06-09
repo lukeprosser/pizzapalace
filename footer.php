@@ -1,38 +1,58 @@
     <footer class="site-footer">
 
       <div class="footer-widgets">
-      
-        <?php if (is_active_sidebar('footer1')) : ?>
-          <div class="footer-widget-area">
-            <?php dynamic_sidebar('footer1'); ?>
-          </div>
-        <?php endif; ?>
 
-        <?php if (is_active_sidebar('footer2')) : ?>
+        <div class="container">
+        
           <div class="footer-widget-area">
-            <?php dynamic_sidebar('footer2'); ?>
-          </div>
-        <?php endif; ?>
+            <nav class="footer-nav">
+              <?php 
+                $args = array(
+                  'theme_location' => 'footer1'
+                );
 
-        <?php if (is_active_sidebar('footer3')) : ?>
-          <div class="footer-widget-area">
-            <?php dynamic_sidebar('footer3'); ?>
+                wp_nav_menu($args);
+              ?>
+            </nav><!-- .footer-nav -->
           </div>
-        <?php endif; ?>
+
+          <div class="footer-widget-area">
+            <nav class="footer-nav">
+              <?php 
+                $args = array(
+                  'theme_location' => 'footer2'
+                );
+
+                wp_nav_menu($args);
+              ?>
+            </nav><!-- .footer-nav -->
+          </div>
+
+          <?php if (is_active_sidebar('footer3')) : ?>
+            <div class="footer-widget-area">
+              <?php dynamic_sidebar('footer3'); ?>
+            </div>
+          <?php endif; ?>
+        
+        </div><!-- .container -->
       
-      </div>
+      </div><!-- .footer-widgets -->
 
       <div class="footer-details">
-      
-        <div class="footer-detail">
-          <p><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?></p>
-        </div>
 
-        <div class="footer-detail">
-          <p>Built by <a href="https://www.createdeluxe.com/"><?php echo get_the_author(); ?></a></p>
-        </div>
+        <div class="container">
+        
+          <div class="footer-detail">
+            <p><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?></p>
+          </div>
+
+          <div class="footer-detail">
+            <p>Built by <a href="https://www.createdeluxe.com/"><?php echo get_the_author(); ?></a></p>
+          </div>
+        
+        </div><!-- .container -->
       
-      </div>
+      </div><!-- .footer-details -->
 
     </footer><!-- .site-footer -->
 

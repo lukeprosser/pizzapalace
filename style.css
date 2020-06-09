@@ -39,6 +39,7 @@
 /*	0. CSS Reset
 /* -------------------------------------------------------------------------- */
 
+/*
 * {
   margin: 0;
   padding: 0;
@@ -95,4 +96,29 @@ td {
 blockquote::before,
 blockquote::after {
   content: '';
+}
+*/
+
+/* -------------------------------------------------------------------------- */
+
+/*	1. Document Setup
+/* -------------------------------------------------------------------------- */
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.site-header {
+  background-color: #e63946;
+  color: #fff;
+}
+
+.header-inner {
+  display: flex;
+}
+
+.site-footer {
+  background-color: #2b2d42;
+  color: #fff;
 }
