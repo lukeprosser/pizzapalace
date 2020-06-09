@@ -12,11 +12,7 @@
           while (have_posts()) {
             the_post(); ?>
             
-            <article class="post-listing">
-
-              <div class="post-thumbnail">
-                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
-              </div>
+            <article class="post">
 
               <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
@@ -43,14 +39,9 @@
 
               </p>
 
-              <?php if (is_home() || is_archive()) { // Show excerpt on blog index/archive pages ?>
-                <p>
-                  <?php echo get_the_excerpt(); ?>
-                  <a href="<?php the_permalink(); ?>">Read more &raquo;</a>
-                </p>
-              <?php } else {
-                the_content();
-              } ?>
+              <?php the_post_thumbnail('banner-image'); ?>
+		
+              <?php the_content(); ?>
 
             </article>
             

@@ -6,9 +6,21 @@
 
     if (have_posts()) {
       while (have_posts()) {
-        the_post();
-        get_template_part( 'content', 'page' ); // Get content-page
-      }
+        the_post(); ?>
+
+        <article class="page">
+
+          <div class="container">
+
+            <h2><?php the_title(); ?></h2>
+
+            <?php the_content(); ?>
+
+          </div>
+
+        </article>
+        
+      <?php }
     } else {
       echo '<p>No content found</p>';
     }
