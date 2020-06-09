@@ -25,7 +25,7 @@
 
   </p>
 
-  <?php if (is_home()) { ?>
+  <?php if (is_home() || is_archive()) { ?>
     <p>
       <?php echo get_the_excerpt(); ?>
       <a href="<?php the_permalink(); ?>">Read more &raquo;</a>
