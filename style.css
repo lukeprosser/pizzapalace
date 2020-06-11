@@ -39,7 +39,6 @@
 /*	0. CSS Reset
 /* -------------------------------------------------------------------------- */
 
-/*
 * {
   margin: 0;
   padding: 0;
@@ -97,7 +96,6 @@ blockquote::before,
 blockquote::after {
   content: '';
 }
-*/
 
 /* -------------------------------------------------------------------------- */
 
@@ -109,24 +107,113 @@ blockquote::after {
   margin: 0 auto;
 }
 
+/* -------------------------------------------------------------------------- */
+
+/*	2. Element Base
+/* -------------------------------------------------------------------------- */
+
+:root {
+  --red: #e63946;
+  --yellow: #e6e150;
+  --green: #17997f;
+  --dark: #2b2d42;
+  --black: #313639;
+  --white: #f8f8ff;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  line-height: 1.6rem;
+}
+
 img {
   max-width: 100%;
 }
 
-.site-header {
-  background-color: #e63946;
+/* -------------------------------------------------------------------------- */
+
+/*	3. Helper Classes
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+
+/*	4. Site Header
+/* -------------------------------------------------------------------------- */
+
+.header-navigation {
+  background-color: var(--red);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-brand {
+  padding: 2rem 0 1rem;
+  color: var(--white);
+  font-size: 3.2rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-logo {
+  margin-bottom: 1.2rem;
+  font-family: 'Pacifico', cursive;
+}
+
+.header-logo a {
+  text-decoration: none;
   color: #fff;
 }
 
-.header-inner {
+.header-tagline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.site-nav ul {
+  /* border-top: 2px solid var(--yellow);
+  border-bottom: 2px solid var(--yellow); */
+  list-style: none;
+
   display: flex;
 }
 
-.site-footer {
-  background-color: #2b2d42;
-  color: #fff;
+.site-nav ul li {
+  padding: 0.4rem 1rem 0.4rem 0;
 }
 
-div.header-search label {
+.site-nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--white);
+}
+
+.header-search {
+  padding: 0.3rem 0;
+  background-color: var(--dark);
+  text-align: right;
+}
+
+.header-search label {
   display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	5. Site Footer
+/* -------------------------------------------------------------------------- */
+
+.site-footer {
+  background-color: var(--dark);
+  color: var(--white);
 }
