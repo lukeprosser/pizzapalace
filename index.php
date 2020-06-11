@@ -6,27 +6,31 @@
 
     <div class="container">
     
-      <?php 
+      <div class="main-column">
+      
+        <?php 
 
-        if (have_posts()) : 
-          while (have_posts()) : the_post();
-            
-            get_template_part('content'); // 'content' is simply the name of the file (content.php) - fully customisable
-            
-          endwhile;
+          if (have_posts()) : 
+            while (have_posts()) : the_post();
+              
+              get_template_part('content'); // 'content' is simply the name of the file (content.php) - fully customisable
+              
+            endwhile;
 
-        else :
-          echo '<p>No content found</p>';
-        endif;
+          else :
+            echo '<p>No content found</p>';
+          endif;
 
-      ?>
+        ?>
+      
+      </div><!-- .main-column -->
+      
+      <?php get_sidebar(); ?>
 
     </div><!-- .container -->
   
   </div><!-- .post-index -->
     
-  <?php get_sidebar(); ?>
-
 </main><!-- .site-content -->
 
 <?php get_footer(); ?>

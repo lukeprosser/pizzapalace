@@ -27,8 +27,24 @@
     add_image_size('banner-image', 920, 210, true);
 
     // Widget support
-    add_theme_support('widgets');
+    // add_theme_support('widgets');
   }
   add_action('after_setup_theme', 'pizzaPalace_setup');
+
+  // Add widget locations
+  function initThemeWidgets() {
+    register_sidebar(array(
+      'name' => 'Sidebar',
+      'id' => 'sidebar1',
+      'before_title' => '<h3 class="widget-title">',
+      'after_title' => '</h3>'
+    ));
+
+    register_sidebar(array(
+      'name' => 'Address',
+      'id' => 'address'
+    ));
+  }
+  add_action('widgets_init', 'initThemeWidgets');
 
 ?>

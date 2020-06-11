@@ -28,9 +28,9 @@
             </nav><!-- .footer-nav -->
           </div>
 
-          <?php if (is_active_sidebar('footer3')) : ?>
+          <?php if (is_active_sidebar('address')) : ?>
             <div class="footer-widget-area">
-              <?php dynamic_sidebar('footer3'); ?>
+              <?php dynamic_sidebar('address'); ?>
             </div>
           <?php endif; ?>
         
