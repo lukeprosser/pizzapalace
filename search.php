@@ -8,19 +8,24 @@
     
       <?php 
 
-        if (have_posts()) : 
+        if (have_posts()) : ?>
+
+          <h2>Search results for: <?php the_search_query(); ?></h2>
+
+          <?php 
           while (have_posts()) : the_post();
             
-            get_template_part('content'); // 'content' is simply the name of the file (content.php) - fully customisable
+            get_template_part('content');
             
           endwhile;
-
+        
         else :
           echo '<p>No content found</p>';
         endif;
 
       ?>
 
+    
     </div><!-- .container -->
   
   </div><!-- .post-index -->

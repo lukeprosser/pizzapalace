@@ -34,6 +34,10 @@
               wp_nav_menu($args);
             ?>
           </nav><!-- .site-nav -->
+
+          <div class="header-search">
+            <?php get_search_form(); ?>
+          </div><!-- .header-search -->
         
         </div><!-- .header-inner -->
 

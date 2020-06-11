@@ -126,3 +126,7 @@ img {
   background-color: #2b2d42;
   color: #fff;
 }
+
+div.header-search label {
+  display: none;
+}
