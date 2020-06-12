@@ -139,6 +139,110 @@ img {
 /*	3. Helper Classes
 /* -------------------------------------------------------------------------- */
 
+.intro {
+  position: relative;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide:first-child {
+  background: url('../../uploads/2020/06/restaurant.jpg') no-repeat center
+    center/cover;
+}
+.slide:nth-child(2) {
+  background: url('../../uploads/2020/06/pizza-oven-2.jpg') no-repeat center
+    center/cover;
+}
+.slide:nth-child(3) {
+  background: url('../../uploads/2020/06/customers.jpg') no-repeat center
+    center/cover;
+}
+.slide:nth-child(4) {
+  background: url('../../uploads/2020/06/pizza-oven-3.jpg') no-repeat center
+    center/cover;
+}
+.slide:nth-child(5) {
+  background: url('../../uploads/2020/06/serving-pizza.jpg') no-repeat center
+    center/cover;
+}
+
+.slider-buttons button {
+  padding: 10px 15px;
+  background-color: transparent;
+  color: var(--white);
+  cursor: pointer;
+  outline: none;
+}
+
+.slider-buttons button:hover i {
+  color: var(--yellow);
+}
+
+.slider-buttons button i {
+  font-size: 1.5rem;
+}
+
+.slider-buttons #prev {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0, -50%);
+}
+
+.slider-buttons #next {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(0, -50%);
+}
+
+.slider-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 100%;
+  color: var(--white);
+  text-align: center;
+  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.slider-content .tagline {
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.slider-content p {
+  font-size: 1.5rem;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /*	4. Site Header
@@ -219,7 +323,7 @@ img {
   margin: 2rem 0;
   padding: 0.5rem;
   border: 2px solid var(--white);
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 .header-search label {

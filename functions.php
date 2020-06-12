@@ -3,6 +3,8 @@
   // Load scripts
   function pizzaPalace_resources() {
     wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_script('carousel', get_stylesheet_directory_uri().'/js/carousel.js', 
+    array(), false, true);
   }
   add_action('wp_enqueue_scripts', 'pizzaPalace_resources');
 
