@@ -105,6 +105,7 @@ blockquote::after {
 .container {
   max-width: 920px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -124,7 +125,7 @@ blockquote::after {
 body {
   background-color: var(--white);
   color: var(--black);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
   line-height: 1.6rem;
 }
@@ -143,21 +144,23 @@ img {
 /*	4. Site Header
 /* -------------------------------------------------------------------------- */
 
-.header-navigation {
+.site-header {
   background-color: var(--red);
+  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
+}
 
+.site-header .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .header-brand {
   padding: 2rem 0 1rem;
   color: var(--white);
-  font-size: 3.2rem;
+  font-size: 2.1rem;
   letter-spacing: 1px;
-  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
 }
 
 .header-logo {
@@ -177,35 +180,88 @@ img {
   letter-spacing: 2px;
 }
 
-.site-nav ul {
-  /* border-top: 2px solid var(--yellow);
-  border-bottom: 2px solid var(--yellow); */
-  list-style: none;
-
+.site-nav {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav ul {
+  padding: 0.5rem 0;
+  border-top: 2px solid var(--yellow);
+  border-bottom: 2px solid var(--yellow);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .site-nav ul li {
-  padding: 0.4rem 1rem 0.4rem 0;
+  padding: 0.5rem 0;
 }
 
 .site-nav ul li a {
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: var(--white);
 }
 
+.site-nav ul li a:hover {
+  color: var(--yellow);
+}
+
 .header-search {
-  padding: 0.3rem 0;
-  background-color: var(--dark);
-  text-align: right;
+  margin: 2rem 0;
+  padding: 0.5rem;
+  border: 2px solid var(--white);
+  border-radius: 10px;
 }
 
 .header-search label {
   display: none;
+}
+
+.header-search form input#s {
+  padding: 0 0.5rem;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.header-search form input#s::placeholder {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+/* Change autocomplete styles in Chrome */
+.header-search form input#s:-webkit-autofill,
+.header-search form input#s:-webkit-autofill:hover,
+.header-search form input#s:-webkit-autofill:focus {
+  caret-color: var(--white);
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.header-search button#searchsubmit {
+  background: none;
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.header-search button#searchsubmit:hover {
+  color: var(--yellow);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -216,4 +272,48 @@ img {
 .site-footer {
   background-color: var(--dark);
   color: var(--white);
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	17. Media Queries
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 700px) {
+  .site-header .container {
+    flex-direction: row;
+  }
+
+  .header-brand {
+    padding: 2rem 0 1rem;
+    font-size: 2.8rem;
+  }
+
+  .header-logo {
+    margin-bottom: 1.2rem;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .site-nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .site-nav ul {
+    padding: 0 0.5rem;
+    border-top: none;
+    border-bottom: none;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .site-nav ul li {
+    padding: 0 0.5rem;
+  }
+
+  .site-nav ul li a {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
 }
