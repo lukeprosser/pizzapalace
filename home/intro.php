@@ -9,13 +9,13 @@
   </div>
   
   <div class="slider-buttons">
-    <button id="prev"><i class="fas fa-arrow-left"></i></button>
-    <button id="next"><i class="fas fa-arrow-right"></i></button>
+    <button id="prev"><i class="fas fa-chevron-left"></i></button>
+    <button id="next"><i class="fas fa-chevron-right"></i></button>
   </div>
   
   <div class="slider-content">
-    <h2 class="tagline"><?php bloginfo('description'); ?></h2>
-    <div class="slider-cta">
+    <h2 class="slider-content-tagline"><?php bloginfo('description'); ?></h2>
+    <div class="slider-content-cta">
       <p>Book now on</p>
       <p><i class="fas fa-phone"></i> 02920 438438</p>
     </div>

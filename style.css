@@ -120,6 +120,7 @@ blockquote::after {
   --dark: #2b2d42;
   --black: #313639;
   --white: #f8f8ff;
+  --offwhite: #ebebeb;
 }
 
 body {
@@ -127,7 +128,6 @@ body {
   color: var(--black);
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
-  line-height: 1.6rem;
 }
 
 img {
@@ -146,7 +146,7 @@ img {
 .slider {
   position: relative;
   overflow: hidden;
-  height: 600px;
+  height: 450px;
 }
 
 .slide {
@@ -157,6 +157,7 @@ img {
   height: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  filter: brightness(60%);
 }
 
 .slide.current {
@@ -185,7 +186,7 @@ img {
 }
 
 .slider-buttons button {
-  padding: 10px 15px;
+  padding: 10px 5px;
   background-color: transparent;
   color: var(--white);
   cursor: pointer;
@@ -193,7 +194,7 @@ img {
 }
 
 .slider-buttons button:hover i {
-  color: var(--yellow);
+  color: var(--offwhite);
 }
 
 .slider-buttons button i {
@@ -219,13 +220,12 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
-  height: 50%;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 100%;
+  width: 80%;
+  height: 60%;
+  padding: 1rem;
   color: var(--white);
   text-align: center;
-  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.5);
 
   display: flex;
   flex-direction: column;
@@ -233,14 +233,28 @@ img {
   align-items: center;
 }
 
-.slider-content .tagline {
+.slider-content-tagline {
+  margin-bottom: 1.5rem;
   font-family: 'Pacifico', cursive;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 500;
+  line-height: 4rem;
 }
 
 .slider-content p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.slider-content p:first-of-type {
+  margin-bottom: 1rem;
+}
+
+.slider-content-cta p:nth-child(2) {
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.5);
+  background-color: var(--red);
+  color: var(--white);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -253,35 +267,26 @@ img {
   text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
 }
 
-.site-header .container {
+.header-inner {
+  padding: 0.5rem 0;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.header-brand {
-  padding: 2rem 0 1rem;
+.header-logo {
+  margin-bottom: 1.2rem;
+  font-family: 'Pacifico', cursive;
   color: var(--white);
   font-size: 2.1rem;
   letter-spacing: 1px;
 }
 
-.header-logo {
-  margin-bottom: 1.2rem;
-  font-family: 'Pacifico', cursive;
-}
-
 .header-logo a {
   text-decoration: none;
-  color: #fff;
-}
-
-.header-tagline {
-  font-size: 1.2rem;
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: 2px;
+  color: var(--white);
 }
 
 .site-nav {
@@ -316,11 +321,11 @@ img {
 }
 
 .site-nav ul li a:hover {
-  color: var(--yellow);
+  color: var(--offwhite);
 }
 
 .header-search {
-  margin: 2rem 0;
+  margin: 2rem 0 1rem;
   padding: 0.5rem;
   border: 2px solid var(--white);
   border-radius: 3px;
@@ -384,18 +389,13 @@ img {
 /* -------------------------------------------------------------------------- */
 
 @media (min-width: 700px) {
-  .site-header .container {
+  .header-inner {
     flex-direction: row;
   }
 
-  .header-brand {
-    padding: 2rem 0 1rem;
-    font-size: 2.8rem;
-  }
-
   .header-logo {
-    margin-bottom: 1.2rem;
-    font-family: 'Pacifico', cursive;
+    margin-bottom: 0;
+    font-size: 2.5rem;
   }
 
   .site-nav {
@@ -417,7 +417,47 @@ img {
   }
 
   .site-nav ul li a {
-    font-size: 1.1rem;
+    font-size: 1rem;
     letter-spacing: 1px;
+  }
+
+  .header-search {
+    margin: 0;
+  }
+
+  .slider {
+    height: 600px;
+  }
+
+  .slider-buttons button {
+    padding: 10px 15px;
+  }
+
+  .slider-content {
+    width: 70%;
+    height: 50%;
+  }
+
+  .slider-content-tagline {
+    margin-bottom: 0;
+    font-size: 4rem;
+  }
+
+  .slider-content p {
+    font-size: 1.5rem;
+  }
+
+  .slider-content-cta p:nth-child(2) {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .header-logo {
+    font-size: 2.8rem;
+  }
+
+  .site-nav ul li a {
+    font-size: 1.1rem;
   }
 }

@@ -20,24 +20,27 @@
  
       <div class="container">
 
-        <div class="header-brand">
-          <h1 class="header-logo"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-        </div><!-- .header-brand -->
-        
-        <nav class="site-nav">
-          <?php 
-            $args = array(
-              'theme_location' => 'primary'
-            );
+        <div class="header-inner">
 
-            wp_nav_menu($args);
-          ?>
+          <h1 class="header-logo">
+            <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+          </h1>
           
-          <div class="header-search">
-            <?php get_search_form(); ?>
-          </div><!-- .header-search -->  
-        </nav><!-- .site-nav -->
+          <nav class="site-nav">
+            <?php 
+              $args = array(
+                'theme_location' => 'primary'
+              );
 
+              wp_nav_menu($args);
+            ?>
+            
+            <div class="header-search">
+              <?php get_search_form(); ?>
+            </div><!-- .header-search -->  
+          </nav><!-- .site-nav -->
+
+        </div>
 
       </div><!-- .container -->
 
