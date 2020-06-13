@@ -4,9 +4,9 @@
   
     <div class="recent-posts-inner">
 
-      <h2>The latest from the blog</h2>
+      <h2 class="section-header">From the blog</h2>
     
-      <div class="recent-post-list">
+      <div class="recent-posts-list">
           
         <?php 
 
@@ -20,12 +20,16 @@
           if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post(); ?>
 
-              <div class="recent-post-item">
-                <div class="post-thumbnail">
-                  <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
-                </div>
-                <h3><?php the_title(); ?></h3>
-              </div>
+              <!-- <div class="recent-posts-item"> -->
+                <a class="recent-posts-item" href="<?php the_permalink() ?>">
+                  <div class="post-thumbnail">
+                    <?php the_post_thumbnail('small-thumbnail'); ?>
+                  </div>
+                  <div class="post-title">
+                    <h3><?php the_title(); ?></h3>
+                  </div>
+                </a>
+              <!-- </div> -->
               
             <?php endwhile;
             

@@ -12,25 +12,28 @@
 ----------------------------------------------------------------
 
 	0. 	CSS Reset
-	1. 	Document Setup
-	2. 	Element Base
-	3. 	Helper Classes
-	4. 	Site Header
-	5. 	Menu Modal
-	6. 	Search Modal
-	7. 	Page Templates
-		a. 	Template: Cover Template
-		c. 	Template: Full Width
-	8.  Post: Archive
-	9.  Post: Single
-	10. Blocks
-	11. Entry Content
-	12. Comments
-	13. Site Pagination
-	14. Error 404
-	15. Widgets
-	16. Site Footer
-	17. Media Queries
+	1. 	Global Styles
+	2. 	Helper Classes
+	3. 	Site Header
+  4.  Site Footer
+	5. 	Page Templates
+    a. 	Template: Policy Page
+  6.  Custom Pages
+    a.  Front Page
+      i.  Intro
+      ii. About
+      iii. Image Gallery
+      iv. Recent Posts
+      v. Contact
+    a.  Menu
+	7.  Post: Archive
+	8.  Post: Single
+	9. Blocks
+	10. Entry Content
+	11. Site Pagination
+	12. Error 404
+	13. Widgets
+	14. Media Queries
 
 ----------------------------------------------------------------------------- */
 
@@ -99,18 +102,7 @@ blockquote::after {
 
 /* -------------------------------------------------------------------------- */
 
-/*	1. Document Setup
-/* -------------------------------------------------------------------------- */
-
-.container {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* -------------------------------------------------------------------------- */
-
-/*	2. Element Base
+/*	1. Global Styles
 /* -------------------------------------------------------------------------- */
 
 :root {
@@ -132,13 +124,217 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* -------------------------------------------------------------------------- */
 
-/*	3. Helper Classes
+/*	2. Helper Classes
 /* -------------------------------------------------------------------------- */
 
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-header {
+  margin-bottom: 0.5rem;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	3. Site Header
+/* -------------------------------------------------------------------------- */
+
+.site-header {
+  background-color: var(--red);
+  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-inner {
+  padding: 0.5rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  margin-bottom: 1.2rem;
+  font-family: 'Pacifico', cursive;
+  color: var(--white);
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+}
+
+.header-logo a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav ul {
+  padding: 0.5rem 0;
+  border-top: 2px solid var(--yellow);
+  border-bottom: 2px solid var(--yellow);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-nav ul li {
+  padding: 0.5rem 0;
+}
+
+.site-nav ul li a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+
+.site-nav ul li a:hover {
+  color: var(--offwhite);
+}
+
+.header-search {
+  margin: 2rem 0 1rem;
+  padding: 0.5rem;
+  border: 2px solid var(--white);
+  border-radius: 3px;
+}
+
+.header-search label {
+  display: none;
+}
+
+.header-search form input#s {
+  padding: 0 0.5rem;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.header-search form input#s::placeholder {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+/* Change autocomplete styles in Chrome */
+.header-search form input#s:-webkit-autofill,
+.header-search form input#s:-webkit-autofill:hover,
+.header-search form input#s:-webkit-autofill:focus {
+  caret-color: var(--white);
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.header-search button#searchsubmit {
+  background: none;
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.header-search button#searchsubmit:hover {
+  color: var(--yellow);
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	4. Site Footer
+/* -------------------------------------------------------------------------- */
+
+.site-footer {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.site-footer li.widget {
+  list-style: none;
+}
+
+.site-footer a {
+  text-decoration: none;
+  color: var(--white);
+}
+.site-footer a:hover {
+  color: var(--offwhite);
+}
+
+.footer-widgets {
+  padding: 2rem 0 1rem;
+  text-transform: uppercase;
+}
+
+.footer-widgets .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-widgets ul {
+  list-style: none;
+}
+
+.footer-widget-area {
+  margin: 0.5rem 0;
+}
+
+.footer-widget-area .footer-nav li,
+.footer-widget-area .address li {
+  margin: 0.5rem 0;
+}
+
+.footer-widget-area .address {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+}
+
+.footer-details {
+  padding: 2rem 0;
+  background-color: var(--red);
+}
+
+.footer-details .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-detail {
+  margin: 0.3rem 0;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	5. Custom Pages - Front Page
+/* -------------------------------------------------------------------------- */
+
+/* Intro */
 .intro {
   position: relative;
 }
@@ -257,135 +453,44 @@ img {
   color: var(--white);
 }
 
-/* -------------------------------------------------------------------------- */
+/* About */
 
-/*	4. Site Header
-/* -------------------------------------------------------------------------- */
+/* Image Gallery */
 
-.site-header {
-  background-color: var(--red);
-  text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
+/* Recent Posts */
+.recent-posts-inner {
+  padding: 2rem 0;
 }
 
-.header-inner {
-  padding: 0.5rem 0;
-
+.recent-posts-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.header-logo {
-  margin-bottom: 1.2rem;
-  font-family: 'Pacifico', cursive;
-  color: var(--white);
-  font-size: 2.1rem;
-  letter-spacing: 1px;
-}
-
-.header-logo a {
-  text-decoration: none;
-  color: var(--white);
-}
-
-.site-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.site-nav ul {
-  padding: 0.5rem 0;
-  border-top: 2px solid var(--yellow);
-  border-bottom: 2px solid var(--yellow);
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.site-nav ul li {
-  padding: 0.5rem 0;
-}
-
-.site-nav ul li a {
-  text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--white);
-}
-
-.site-nav ul li a:hover {
-  color: var(--offwhite);
-}
-
-.header-search {
-  margin: 2rem 0 1rem;
-  padding: 0.5rem;
-  border: 2px solid var(--white);
+.recent-posts-item {
+  margin: 1rem 0;
   border-radius: 3px;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--offwhite);
+  text-decoration: none;
+  color: var(--black);
+
+  align-self: flex-start;
 }
 
-.header-search label {
-  display: none;
+.recent-posts-item .post-title {
+  padding: 0.5rem;
 }
 
-.header-search form input#s {
-  padding: 0 0.5rem;
-  background: none;
-  border: none;
-  outline: none;
-  color: var(--white);
-  font-size: 0.9rem;
-  letter-spacing: 2px;
+.recent-posts-item h3 {
+  font-weight: 400;
 }
 
-.header-search form input#s::placeholder {
-  color: var(--white);
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-}
-
-/* Change autocomplete styles in Chrome */
-.header-search form input#s:-webkit-autofill,
-.header-search form input#s:-webkit-autofill:hover,
-.header-search form input#s:-webkit-autofill:focus {
-  caret-color: var(--white);
-  -webkit-text-fill-color: var(--white);
-  -webkit-box-shadow: none;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-.header-search button#searchsubmit {
-  background: none;
-  border: none;
-  color: var(--white);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.header-search button#searchsubmit:hover {
-  color: var(--yellow);
-}
+/* Contact */
 
 /* -------------------------------------------------------------------------- */
 
-/*	5. Site Footer
-/* -------------------------------------------------------------------------- */
-
-.site-footer {
-  background-color: var(--dark);
-  color: var(--white);
-}
-
-/* -------------------------------------------------------------------------- */
-
-/*	17. Media Queries
+/*	14. Media Queries
 /* -------------------------------------------------------------------------- */
 
 @media (min-width: 700px) {
@@ -449,6 +554,32 @@ img {
 
   .slider-content-cta p:nth-child(2) {
     padding: 1rem 1.5rem;
+  }
+
+  .footer-widgets .container {
+    flex-direction: row;
+  }
+
+  .footer-widget-area .address {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .footer-details .container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* Intro */
+  .recent-posts-list {
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+  }
+
+  .recent-posts-item + .recent-posts-item {
+    /* Only apply to children directly following each other */
+    margin-left: 1rem;
   }
 }
 
