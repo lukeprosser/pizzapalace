@@ -454,8 +454,27 @@ img {
 }
 
 /* About */
+.about-inner {
+  padding: 2rem 0;
+}
 
 /* Image Gallery */
+.gallery {
+  padding: 3rem 0 2rem;
+  background-color: var(--offwhite);
+}
+
+.showcase-gallery .envira-gallery-public {
+  overflow: visible;
+}
+
+.showcase-gallery .envira-gallery-item-inner {
+  overflow: visible;
+}
+
+.showcase-gallery .showcase-image {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
 
 /* Recent Posts */
 .recent-posts-inner {
@@ -470,12 +489,16 @@ img {
 .recent-posts-item {
   margin: 1rem 0;
   border-radius: 3px;
-  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   background-color: var(--offwhite);
   text-decoration: none;
   color: var(--black);
 
   align-self: flex-start;
+}
+
+.recent-posts-item:hover img {
+  filter: brightness(80%);
 }
 
 .recent-posts-item .post-title {

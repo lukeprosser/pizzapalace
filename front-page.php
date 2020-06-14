@@ -6,6 +6,8 @@
 
   <?php get_template_part('home/about') ?>
 
+  <?php get_template_part('home/gallery') ?>
+
   <?php get_template_part('home/recent-posts') ?>
     
   <?php get_template_part('home/contact') ?>
