@@ -454,14 +454,27 @@ img {
 }
 
 /* About */
-.about-inner {
+.about-content {
   padding: 2rem 0;
+}
+
+.about-content .wp-block-group__inner-container {
+  margin: 0 auto;
+  max-width: 920px;
+}
+
+.about-content .about-content-item {
+  padding: 1rem 0;
 }
 
 /* Image Gallery */
 .gallery {
   padding: 3rem 0 2rem;
   background-color: var(--offwhite);
+}
+
+.gallery .envira-gallery-wrap {
+  max-width: 920px;
 }
 
 .showcase-gallery .envira-gallery-public {
@@ -477,8 +490,13 @@ img {
 }
 
 /* Recent Posts */
-.recent-posts-inner {
+.recent-posts {
   padding: 2rem 0;
+}
+
+.recent-posts .wp-block-group__inner-container {
+  margin: 0 auto;
+  max-width: 920px;
 }
 
 .recent-posts-list {
