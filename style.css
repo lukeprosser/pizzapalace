@@ -26,14 +26,15 @@
       iv. Recent Posts
       v. Contact
     a.  Menu
-	7.  Post: Archive
-	8.  Post: Single
-	9. Blocks
-	10. Entry Content
-	11. Site Pagination
-	12. Error 404
-	13. Widgets
-	14. Media Queries
+  7.  Posts Index
+	8.  Post: Archive
+	9.  Post: Single
+	10. Blocks
+	11. Entry Content
+	12. Site Pagination
+	13. Error 404
+	14. Widgets
+	15. Media Queries
 
 ----------------------------------------------------------------------------- */
 
@@ -550,6 +551,65 @@ img {
   button[type='submit'].wpforms-submit.section-contact-form-submit:hover {
   border: none;
   background-color: var(--blue);
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	7. Posts Index
+/* -------------------------------------------------------------------------- */
+
+.post-index {
+  padding: 1em 0;
+}
+
+.post-listing {
+  margin: 3rem 0;
+  line-height: 1.6rem;
+}
+
+.post-listing:not(:last-of-type) {
+  border-bottom: 1px solid #ccc;
+}
+
+.post-listing a:hover,
+.post-listing .post-meta a:hover,
+.post-listing .post-excerpt a:hover {
+  color: var(--blue);
+}
+
+.post-listing .post-thumbnail img {
+  margin: 1rem 0;
+  border-radius: 3px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.post-listing .post-title a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.post-listing .post-meta {
+  color: rgb(123, 123, 123);
+}
+
+.post-listing .post-meta a {
+  color: rgb(123, 123, 123);
+  text-decoration: none;
+}
+
+.post-listing .post-excerpt {
+  margin: 1rem 0 2rem;
+  font-weight: 300;
+}
+
+.post-listing .post-excerpt a {
+  color: var(--red);
+  text-decoration: none;
+}
+.post-listing .post-excerpt a:hover {
+  color: var(--blue);
 }
 
 /* -------------------------------------------------------------------------- */
