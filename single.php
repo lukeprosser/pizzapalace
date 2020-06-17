@@ -2,62 +2,68 @@
 
 <main class="site-content" role="main">
 
-  <div class="post-index">
+  <div class="post-single">
 
     <div class="container">
+
+      <div class="main-column">
     
-      <?php 
+        <?php 
 
-        if (have_posts()) :
-          while (have_posts()) : the_post(); ?>
-            
-            <article class="post">
+          if (have_posts()) :
+            while (have_posts()) : the_post(); ?>
+              
+              <article class="post">
 
-              <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <?php the_post_thumbnail('banner-image', array( 'class' => 'post-banner-image' )); ?>
 
-              <p class="post-meta"><?php the_time('d/m/y') ?> | <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> | 
+                <h3 class="post-title"><?php the_title(); ?></h3>
 
-                <?php 
+                <p class="post-meta"><?php the_time('d/m/y') ?> | <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> | 
 
-                  $categories = get_the_category();
-                  $separator = ", ";
-                  $output = '';
+                  <?php 
 
-                  if ($categories) {
+                    $categories = get_the_category();
+                    $separator = ", ";
+                    $output = '';
 
-                    foreach ($categories as $category) {
-                      $output .= '<a href="' . get_category_link($category->term_id) . '">' . $category->cat_name . '</a>' . $separator;
+                    if ($categories) {
+
+                      foreach ($categories as $category) {
+                        $output .= '<a href="' . get_category_link($category->term_id) . '">' . $category->cat_name . '</a>' . $separator;
+                      }
+
+                      // Remove any starting/trailing commas
+                      echo trim($output, $separator);
+
                     }
 
-                    // Remove any starting/trailing commas
-                    echo trim($output, $separator);
+                  ?>
 
-                  }
+                </p>
 
-                ?>
+                <div class="post-content">
+                  <?php the_content(); ?>
+                </div>
 
-              </p>
+              </article>
+              
+            <?php endwhile;
 
-              <?php the_post_thumbnail('banner-image'); ?>
-		
-              <?php the_content(); ?>
+          else :
+            echo '<p>No content found</p>';
+          endif;
 
-            </article>
-            
-          <?php endwhile;
+        ?>
 
-        else :
-          echo '<p>No content found</p>';
-        endif;
+      </div><!-- .main-column -->
 
-      ?>
+      <?php get_sidebar(); ?>
 
     </div><!-- .container -->
   
-  </div><!-- .post-index -->
+  </div><!-- .post-single -->
     
-  <?php get_sidebar(); ?>
-
 </main><!-- .site-content -->
 
 <?php get_footer(); ?>

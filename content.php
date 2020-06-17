@@ -32,7 +32,7 @@
   <?php if (is_home() || is_archive() || is_search()) { // Show excerpt on blog index/archive/search pages ?>
     <p class="post-excerpt">
       <?php echo get_the_excerpt(); ?>
-      <a href="<?php the_permalink(); ?>">Read more &raquo;</a>
+      <a href="<?php the_permalink(); ?>" class="post-read-more">Read more &raquo;</a>
     </p>
   <?php } else {
     the_content();
