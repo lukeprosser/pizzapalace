@@ -12,26 +12,26 @@ get_header();
     
   <?php 
 
-    if (have_posts()) {
-      while (have_posts()) {
-        the_post();
-      ?>
+    if (have_posts()) :
+      while (have_posts()) : the_post(); ?>
 
-        <article class="policy-page">
+        <article class="page policy-page">
 
           <div class="container">
           
-            <h2><?php the_title(); ?></h2>
+            <h2 class="page-header"><?php the_title(); ?></h2>
+
             <?php the_content(); ?>
           
           </div>
         
         </article>
 
-      <?php }
-    } else {
+      <?php endwhile;
+    
+    else :
       echo '<p>No content found</p>';
-    }
+    endif;
 
   ?>
 

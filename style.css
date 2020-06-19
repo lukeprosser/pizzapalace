@@ -140,6 +140,13 @@ img {
   padding: 0 1rem;
 }
 
+.page-header {
+  margin: 2rem 0;
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
 .section-header {
   margin-bottom: 0.5rem;
   font-family: 'Pacifico', cursive;
@@ -332,7 +339,48 @@ img {
 
 /* -------------------------------------------------------------------------- */
 
-/*	5. Custom Pages - Front Page
+/*	5. Page Templates
+/* -------------------------------------------------------------------------- */
+
+/* Policy Page */
+.policy-page {
+  padding-bottom: 2rem;
+}
+
+.policy-page .section-header {
+  margin-top: 2rem;
+}
+
+.policy-page p {
+  margin: 1rem 0;
+}
+
+.policy-page p,
+.policy-page li {
+  line-height: 1.6rem;
+  font-weight: 300;
+}
+
+.policy-page ul {
+  margin: 1rem 0 1rem 1.2rem;
+}
+
+.policy-page li {
+  padding: 0.2rem 0;
+}
+
+.policy-page p strong {
+  font-weight: 500;
+}
+
+.policy-page a {
+  color: var(--blue);
+  word-wrap: break-word;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	6. Custom Pages - Front Page
 /* -------------------------------------------------------------------------- */
 
 /* Intro */
@@ -562,6 +610,22 @@ img {
   background-color: var(--blue);
 }
 
+/* Menu Page */
+.menu-cat-header {
+  margin: 2rem 0 1rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.menu-cat-items {
+  margin-left: 1.2rem;
+}
+
+.menu-cat-items li {
+  padding: 0.5rem 0;
+  font-weight: 300;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /*	7. Posts Index
@@ -665,6 +729,16 @@ img {
 }
 .post-index .sidebar .widget ul li a:hover {
   color: var(--blue);
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	8. Posts: Archive / Search
+/* -------------------------------------------------------------------------- */
+
+.search-page .section-header,
+.archive-page .section-header {
+  margin-bottom: 2rem;
 }
 
 /* -------------------------------------------------------------------------- */

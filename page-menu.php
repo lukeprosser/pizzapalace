@@ -11,9 +11,7 @@
 
           <div class="container">
 
-            <h2><?php the_title(); ?></h2>
-
-            <p>Testing</p>
+            <h2 class="page-header"><?php the_title(); ?></h2>
 
             <?php the_content(); ?>
 
