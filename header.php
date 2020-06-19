@@ -25,6 +25,9 @@
           <h1 class="header-logo">
             <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
           </h1>
+
+          <label class="hamburger" for="toggle">&#9776;</label>
+          <input type="checkbox" id="toggle"> 
           
           <nav class="site-nav">
             <?php 
@@ -37,9 +40,10 @@
             
             <div class="header-search">
               <?php get_search_form(); ?>
-            </div><!-- .header-search -->  
-          </nav><!-- .site-nav -->
+            </div><!-- .header-search --> 
 
+          </nav><!-- .site-nav -->
+          
         </div>
 
       </div><!-- .container -->
