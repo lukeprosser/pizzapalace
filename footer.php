@@ -47,7 +47,7 @@
           </div>
 
           <div class="footer-detail">
-            <p>Built by <a href="https://www.createdeluxe.com/"><?php echo get_the_author(); ?></a></p>
+            <p>Built by <a href="https://www.createdeluxe.com/">CreateDeluxe</a></p>
           </div>
         
         </div><!-- .container -->

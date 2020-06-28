@@ -20,15 +20,15 @@
     a. 	Template: Policy Page
   6.  Custom Pages
     a.  Front Page
-      i.  Intro
-      ii. About
-      iii. Image Gallery
-      iv. Recent Posts
-      v. Contact
-    a.  Menu
-  7.  Posts Index
-	8.  Post: Archive
-	9.  Post: Single
+      i.  Intro Section
+      ii. About Section
+      iii. Image Gallery Section
+      iv. Recent Posts Section
+      v. Contact Section
+    b.  Menu Page
+  7.  Posts: Index Page
+	8.  Posts: Archive/Search Pages
+	9.  Posts: Single Page
 	10. Blocks
 	11. Entry Content
 	12. Site Pagination
@@ -46,6 +46,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -167,9 +168,18 @@ img {
 .header-inner {
   padding: 0.5rem 0;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -186,7 +196,7 @@ img {
 }
 
 .site-nav {
-  width: 100%;
+  width: 100%; /* Force under brand */
   display: none;
 }
 
@@ -197,9 +207,20 @@ img {
   border-bottom: 2px solid var(--yellow);
   list-style: none;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -240,6 +261,30 @@ img {
   letter-spacing: 2px;
 }
 
+.header-search form input#s::-webkit-input-placeholder {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.header-search form input#s::-moz-placeholder {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.header-search form input#s:-ms-input-placeholder {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.header-search form input#s::-ms-input-placeholder {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
 .header-search form input#s::placeholder {
   color: var(--white);
   font-size: 0.9rem;
@@ -253,6 +298,7 @@ img {
   caret-color: var(--white);
   -webkit-text-fill-color: var(--white);
   -webkit-box-shadow: none;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -280,9 +326,18 @@ img {
   display: none;
 }
 .header-inner input#toggle:checked ~ .site-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -314,8 +369,15 @@ img {
 }
 
 .footer-widgets .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -345,7 +407,12 @@ img {
 }
 
 .footer-details .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -355,10 +422,9 @@ img {
 
 /* -------------------------------------------------------------------------- */
 
-/*	5. Page Templates
+/*	5. Page Templates - a. Template: Policy Page
 /* -------------------------------------------------------------------------- */
 
-/* Policy Page */
 .policy-page {
   padding-bottom: 2rem;
 }
@@ -396,10 +462,10 @@ img {
 
 /* -------------------------------------------------------------------------- */
 
-/*	6. Custom Pages - Front Page
+/*	6. Custom Pages - a. Front Page
 /* -------------------------------------------------------------------------- */
 
-/* Intro */
+/* i. Intro Section */
 .intro {
   position: relative;
 }
@@ -417,7 +483,10 @@ img {
   width: 100%;
   height: 100%;
   opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
+  -webkit-filter: brightness(60%);
   filter: brightness(60%);
 }
 
@@ -425,6 +494,7 @@ img {
   opacity: 1;
 }
 
+/* Slider background images */
 .slide:first-child {
   background: url('../../uploads/2020/06/restaurant.jpg') no-repeat center
     center/cover;
@@ -466,6 +536,8 @@ img {
   position: absolute;
   top: 50%;
   left: 15px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
@@ -473,6 +545,8 @@ img {
   position: absolute;
   top: 50%;
   right: 15px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
@@ -480,6 +554,8 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 80%;
   height: 60%;
@@ -488,9 +564,20 @@ img {
   text-align: center;
   text-shadow: 2px 5px 12px rgba(0, 0, 0, 0.5);
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -513,12 +600,13 @@ img {
 .slider-content-cta p:nth-child(2) {
   padding: 1rem;
   border-radius: 3px;
+  -webkit-box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.5);
   background-color: var(--red);
   color: var(--white);
 }
 
-/* About */
+/* ii. About Section */
 .section-about {
   padding: 2rem 1rem;
 }
@@ -534,7 +622,7 @@ img {
   font-weight: 300;
 }
 
-/* Image Gallery */
+/* iii. Image Gallery Section */
 .section-gallery {
   padding: 3rem 1rem 2rem;
   background-color: var(--offwhite);
@@ -553,10 +641,11 @@ img {
 }
 
 .section-gallery .section-gallery-image {
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Recent Posts */
+/* iv. Recent Posts Section */
 .section-recent-posts {
   padding: 2rem 1rem;
 }
@@ -572,6 +661,7 @@ img {
 
 .section-recent-posts .recent-posts-list li {
   background-color: var(--red);
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
@@ -588,7 +678,7 @@ img {
   font-weight: 300;
 }
 
-/* Contact */
+/* v. Contact Section */
 .section-contact {
   padding: 2rem 1rem;
 }
@@ -617,6 +707,7 @@ img {
   color: var(--white);
   border: none;
   border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -626,7 +717,11 @@ img {
   background-color: var(--blue);
 }
 
-/* Menu Page */
+/* -------------------------------------------------------------------------- */
+
+/*	6. Custom Pages - b. Menu Page
+/* -------------------------------------------------------------------------- */
+
 .menu-cat-header {
   margin: 2rem 0 1rem;
   font-size: 1.8rem;
@@ -644,7 +739,7 @@ img {
 
 /* -------------------------------------------------------------------------- */
 
-/*	7. Posts Index
+/*	7. Posts: Index Page
 /* -------------------------------------------------------------------------- */
 
 .post-index {
@@ -677,6 +772,7 @@ img {
 .post-listing .post-thumbnail img {
   margin: 1rem 0;
   border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -707,6 +803,7 @@ img {
   margin-top: 0.7rem;
   padding: 0.5rem;
   border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   background-color: var(--red);
   color: var(--white);
@@ -749,7 +846,7 @@ img {
 
 /* -------------------------------------------------------------------------- */
 
-/*	8. Posts: Archive / Search
+/*	8. Posts: Archive/Search Pages
 /* -------------------------------------------------------------------------- */
 
 .search-page .section-header,
@@ -759,7 +856,7 @@ img {
 
 /* -------------------------------------------------------------------------- */
 
-/*	9. Post: Single
+/*	9. Posts: Single Page
 /* -------------------------------------------------------------------------- */
 
 .post-single {
@@ -773,6 +870,7 @@ img {
 .post-single .post .post-banner-image {
   margin-bottom: 1rem;
   border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -833,20 +931,29 @@ img {
 
 /* -------------------------------------------------------------------------- */
 
-/*	14. Media Queries
+/*	15. Media Queries
 /* -------------------------------------------------------------------------- */
 
 @media (min-width: 720px) {
+  /* Site Header */
   .header-logo {
-    margin-bottom: 0;
     font-size: 2.5rem;
   }
 
   .site-nav {
     width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -856,7 +963,15 @@ img {
     border-top: none;
     border-bottom: none;
 
+    -webkit-box-orient: horizontal;
+
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: row;
+
     flex-direction: row;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
   }
 
@@ -879,10 +994,36 @@ img {
   }
 
   .header-inner input#toggle:checked ~ .site-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
   }
 
-  /* Intro */
+  /* Site Footer */
+  .footer-widgets .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .footer-widget-area .address {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .footer-details .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  /* Intro Section */
   .slider {
     height: 600px;
   }
@@ -909,33 +1050,22 @@ img {
     padding: 1rem 1.5rem;
   }
 
-  .footer-widgets .container {
-    flex-direction: row;
-  }
-
-  .footer-widget-area .address {
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-
-  .footer-details .container {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  /* Intro */
+  /* Recent Posts Section */
   .recent-posts-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
   }
 
   .recent-posts-item + .recent-posts-item {
-    /* Only apply to children directly following each other */
+    /* Only apply to children directly proceeding each other */
     margin-left: 1rem;
   }
 }
 
 @media (min-width: 800px) {
+  /* Site Header */
   .header-logo {
     font-size: 2.8rem;
   }
@@ -944,8 +1074,10 @@ img {
     font-size: 1.1rem;
   }
 
-  /* Blog index */
+  /* Posts: Index Page */
   .post-index .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
@@ -958,8 +1090,10 @@ img {
     margin-bottom: 0;
   }
 
-  /* Post: Single */
+  /* Posts: Single Page */
   .post-single .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
